@@ -4,6 +4,7 @@
 
 
 BlazeEngine::BlazeEngine()
+:exitGame(false)
 {
 }
 
@@ -12,7 +13,7 @@ BlazeEngine::~BlazeEngine()
 {
 }
 
-int BlazeEngine::initialize(const char* title, int scrnWidth, int scrnHeight)
+int BlazeEngine::Init(const char* title, int scrnWidth, int scrnHeight)
 {
 	//Initialise screen size variables
 	screenWidth = scrnWidth;
@@ -47,17 +48,42 @@ int BlazeEngine::initialize(const char* title, int scrnWidth, int scrnHeight)
 	SDL_UpdateWindowSurface(window);
 
 	//Initialize gameLogic
-	gameInit();
+	GameInit();
 
+	return 0;
+}
 
-	//Wait two seconds
-	SDL_Delay(2000);
+void BlazeEngine::GameInit(){};
+
+void BlazeEngine::DeInit()
+{
 	//Destroy window
 	SDL_DestroyWindow(window);
 	//Quit SDL subsystems
 	SDL_Quit();
-	
-	return 0;
 }
 
-void BlazeEngine::gameInit(){};
+void BlazeEngine::MainLoop()
+{
+	SDL_Event event;
+
+	while (!exitGame)
+	{
+		//Handle event polling
+		while (SDL_PollEvent(&event))
+		{
+			if (event.type == SDL_QUIT)
+				exitGame = true;
+
+
+			//Call statemanagers keydown
+		}
+
+		//Handle game logic in state manager
+
+		//Handle Physics
+
+		//Handle rendering
+
+	}
+}

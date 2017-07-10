@@ -5,17 +5,29 @@ class BlazeEngine
 {
 public:
 	BlazeEngine();
-	virtual ~BlazeEngine();
+	~BlazeEngine();
 
-	int initialize(const char* title, int screenWidth, int screenHeight);
-	void deInitialize();
+	//Initialize SDL and create window
+	int Init(const char* title, int screenWidth, int screenHeight);
 
-	void gameInit();
+	//Cleanup before program ends
+	void DeInit();
+
+	void GameInit();
+
+	//Core game loop. Handles input polling and calling of game logic and render functions.
+	//Runs untill application is quit
+	void MainLoop();
+
+	void Render();
+
 
 private:
 	int screenWidth;
 	int screenHeight;
 	SDL_Window* window;
 	SDL_Surface* screen;
+
+	bool exitGame;
 };
 
