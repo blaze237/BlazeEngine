@@ -13,8 +13,6 @@ public:
 	//Cleanup before program ends
 	void DeInit();
 
-	void GameInit();
-
 	//Core game loop. Handles input polling and calling of game logic and render functions.
 	//Runs untill application is quit
 	void MainLoop();

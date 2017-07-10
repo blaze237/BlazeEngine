@@ -19,7 +19,7 @@ int BlazeEngine::Init(const char* title, int scrnWidth, int scrnHeight)
 	screenWidth = scrnWidth;
 	screenHeight = scrnHeight;
 
-	//Init SDL subsystems
+	//Initialize SDL subsystems
 	if (SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		printf("Could not initialise SDL. Error code: %s\n", SDL_GetError());
@@ -41,19 +41,18 @@ int BlazeEngine::Init(const char* title, int scrnWidth, int scrnHeight)
 	//Get surface
 	screen = SDL_GetWindowSurface(window);
 
+	//Initialize current gameState
+	//GameInit();
+
 	//Initialise the surface
-	SDL_FillRect(screen, NULL, 0xffff00);// SDL_MapRGB(screen->format, 0xFF, 0xFF, 0xFF));
+	SDL_FillRect(screen, NULL, 0xffff00);
 
 	//Update the surface
 	SDL_UpdateWindowSurface(window);
 
-	//Initialize gameLogic
-	GameInit();
-
 	return 0;
 }
 
-void BlazeEngine::GameInit(){};
 
 void BlazeEngine::DeInit()
 {
@@ -78,6 +77,8 @@ void BlazeEngine::MainLoop()
 
 			//Call statemanagers keydown
 		}
+
+		//Check for state transition
 
 		//Handle game logic in state manager
 
