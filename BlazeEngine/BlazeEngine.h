@@ -17,8 +17,13 @@ public:
 	//Runs untill application is quit
 	void MainLoop();
 
+	//Calls current scenes update functions for handling of game and object logic
+	void Update();
+
+	//Calls current scenes render functions
 	void Render();
 
+	
 
 private:
 	int screenWidth;
