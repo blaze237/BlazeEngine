@@ -1,15 +1,18 @@
-﻿Build started 11/07/2017 22:44:20.
+﻿Build started 12/07/2017 23:26:28.
      1>Project "C:\Users\Daniel\documents\visual studio 2013\Projects\BlazeEngine\BlazeEngine\BlazeEngine.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Component.cpp GameObject.cpp
-         Component.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp TypeMap.cpp
+         Main.cpp
          Generating Code...
          Compiling...
-         GameObject.cpp
+         TypeMap.cpp
          Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Daniel\documents\visual studio 2013\Projects\BlazeEngine\Debug\BlazeEngine.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Daniel\documents\visual studio 2013\Projects\BlazeEngine\Debug\BlazeEngine.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Daniel\documents\visual studio 2013\Projects\BlazeEngine\Debug\BlazeEngine.lib" /MACHINE:X86 Debug\BlazeEngine.obj
+         Debug\Comp1.obj
+         Debug\comp2.obj
          Debug\Component.obj
+         Debug\TypeMap.obj
          Debug\GameObject.obj
          Debug\Main.obj
          Debug\Scene.obj
@@ -18,4 +21,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.53
+Time Elapsed 00:00:01.58
