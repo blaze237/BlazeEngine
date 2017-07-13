@@ -9,11 +9,14 @@
 
 
 //This is copy-paste as is to understand the logic. Needs reimplemting with niver wrapper functions
+
+//Reimplement and allow for multiples
+//Delete all objects via pointer in gameObject destructor
 template <class ValueType>
 class TypeMap {
 	// Internally, we'll use a hash table to store mapping from type
 	// IDs to the values.
-	typedef std::unordered_map<int, ValueType> InternalMap;
+	typedef std::unordered_multimap<int, ValueType> InternalMap;
 public:
 	typedef typename InternalMap::iterator iterator;
 	typedef typename InternalMap::const_iterator const_iterator;
@@ -23,6 +26,9 @@ public:
 	const_iterator end() const { return m_map.end(); }
 	iterator begin() { return m_map.begin(); }
 	iterator end() { return m_map.end(); }
+
+	unsigned int size() const { return m_map.size(); }
+
 
 	// Finds the value associated with the type "Key" in the type map.
 	template <class Key>
@@ -35,7 +41,9 @@ public:
 	// Associates a value with the type "Key"
 	template <class Key>
 	void put(ValueType &&value) {
-		m_map[getTypeId<Key>()] = std::forward<ValueType>(value);
+
+		m_map.insert(std::make_pair<int, ValueType>(getTypeId<Key>(),std::forward<ValueType>(value)));
+	//	m_map[getTypeId<Key>()] = std::forward<ValueType>(value);
 	}
 
 private:
