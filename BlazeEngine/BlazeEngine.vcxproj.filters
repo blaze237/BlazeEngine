@@ -42,9 +42,6 @@
     <ClCompile Include="comp2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TypeMap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlazeEngine.h">
@@ -68,7 +65,7 @@
     <ClInclude Include="comp2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TypeMap.h">
+    <ClInclude Include="ComponentMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
