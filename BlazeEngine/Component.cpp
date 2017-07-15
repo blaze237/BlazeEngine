@@ -1,11 +1,8 @@
 #include "Component.h"
 
 
-Component::Component()
+Component::Component(BlazeEngine* e)
+:engine(e)
 {
 }
 
-
-Component::~Component()
-{
-}

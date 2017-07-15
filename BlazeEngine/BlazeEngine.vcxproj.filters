@@ -36,12 +36,6 @@
     <ClCompile Include="Component.cpp">
       <Filter>Source Files\Core Files</Filter>
     </ClCompile>
-    <ClCompile Include="Comp1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="comp2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlazeEngine.h">
@@ -58,12 +52,6 @@
     </ClInclude>
     <ClInclude Include="Component.h">
       <Filter>Header Files\Core Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Comp1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="comp2.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ComponentMap.h">
       <Filter>Header Files</Filter>

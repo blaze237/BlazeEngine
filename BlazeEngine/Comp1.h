@@ -1,8 +1,9 @@
 #pragma once
 #include "Component.h"
+#include "baseTest.h"
 #include <stdio.h>
 class Comp1 :
-	public Component
+	public baseTest
 {
 public:
 	Comp1(int val);
@@ -11,6 +12,11 @@ public:
 	void Update()
 	{
 		printf("This is comp1 %d\n",value);
+	}
+
+	virtual void update()
+	{
+		printf("This is comp1 via base ref %d\n", value);
 	}
 
 private:

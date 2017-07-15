@@ -39,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\vsDev\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\local\boost_1_64_0;C:\vsDev\SDL2-2.0.5\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\vsDev\SDL2-2.0.5\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -70,8 +70,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BlazeEngine.cpp" />
-    <ClCompile Include="Comp1.cpp" />
-    <ClCompile Include="comp2.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -79,8 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BlazeEngine.h" />
-    <ClInclude Include="Comp1.h" />
-    <ClInclude Include="comp2.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentMap.h" />
     <ClInclude Include="GameObject.h" />
