@@ -6,9 +6,12 @@
 #include <string>
 #include <vector>
 #include "GameObject.h"
+#include <ctime>
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
+
+void testFunction();
 
 int main(int argc, char* args[])
 {
@@ -19,9 +22,11 @@ int main(int argc, char* args[])
 	BlazeEngine engine;
 	code = engine.Init("BlazeEngine Demo", SCREEN_WIDTH, SCREEN_HEIGHT);
 	
-	GameObject* obj = new GameObject (&engine);
+	//GameObject* obj = new GameObject (&engine,6);
 
-	delete obj;
+	//delete obj;
+
+	
 
 
 ///	std::vector<Component*> comps = obj.GetComponents<Component>();

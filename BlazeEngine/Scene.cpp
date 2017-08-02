@@ -1,7 +1,7 @@
 #include "Scene.h"
 #include <stdio.h>
 #include <cstdlib>
-
+#include "GameObject.h"
 
 Scene::Scene(BlazeEngine* e)
 :engine(e)
@@ -11,12 +11,21 @@ Scene::Scene(BlazeEngine* e)
 
 Scene::~Scene()
 {
+	for (auto& obj : GameObjects)
+	{
+		if (obj != NULL)
+			delete obj;
+	}
 }
+
 
 void Scene::UpdateGameObjects(int tick)
 {
-	/*for each (GameObject obj in GameObjects)
-		obj.update();*/
+	for (auto& obj : GameObjects)
+	{
+		if (obj != NULL)
+			obj->UpdateComponents(tick);
+	}
 }
 
 void Scene::PhysicsUpdate(int tick)
@@ -29,6 +38,14 @@ void Scene::PhysicsUpdate(int tick)
 void Scene::DrawRenderers()
 {
 
+}
+
+//Remove an object from the scene by setting pointer to it to NULL and deleting the object
+void Scene::DeleteObject(GameObject* obj)
+{
+	GameObjects[obj->ID] = NULL;
+
+	delete obj;
 }
 
 void Scene::ResetTransitionFlags()

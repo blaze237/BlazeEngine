@@ -1,24 +1,34 @@
 #pragma once
 #include "BlazeEngine.h"
+
+class GameObject;
 class Component
 {
 public:
-	Component(BlazeEngine* e);
-	//The destructor is made pure virtual to prevent instantion of base component objects, as this would make no sense to allow. 
-	//By only making the destrucot virtual this allows for custom components to be made without having to worry about provdidng 
-	//Implementations for all base class fucntions, when many would likley be blank functions as few components will use all component
-	//functionality.
-	virtual ~Component() = 0; 
+	Component(BlazeEngine* e, GameObject* parent, int id);
 
-	//Called once every frame
-	virtual void Update(int tick) {}
+	virtual ~Component() {};
+
 
 	//This function is called by the gameobject the component is attatched when the gameobject is set to be active (if it was previously not)
 	virtual void OnParentEnabled() {}
 	//This function is called by the gameobject the component is attatched when the gameobject is set to be not active (if it previously was)
 	virtual void OnParentDisabled() {}
+	//This function is called by the gameobject the component is attatched when the gameobject is about to be destroyed and removed from the scene
+	virtual void OnParentDestroyed() {}
+
+	/*Deletes the components.
+	Parent gameobject is made aware of this deletion and provided refs to this object in other places
+	are references to the original pointer stored in the scenes object container, then these
+	refs will also automaticly become null*/
+	void Destroy();
 
 private:
 	BlazeEngine* engine;
+	GameObject* const parent;
+
+public:
+	//Refernce used to identify this game object in the scene it exists in
+	const int ID;
 };
 

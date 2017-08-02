@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
+
 class BlazeEngine;
+class GameObject;
 
 class Scene
 {
@@ -17,6 +19,8 @@ public:
 	virtual void ResetTransitionFlags();
 	//Returns true if any transition flag is true
 	virtual bool ReadyToTransition();
+
+	void DeleteObject(GameObject* obj);
 
 //Update functions
 
@@ -60,11 +64,11 @@ public:
 
 
 protected:
-	BlazeEngine* engine; //Reference to egine used for calling non Scene specific engine functions
+	BlazeEngine* engine; //Reference to engine used for calling non scene specific engine functions
 	std::vector<bool> transitionFlags;
+	std::vector<GameObject*> GameObjects;
 
 	//std::vector<InputManagers> Inputs;
-	//std::vector<GameObjects> Objects;
 	//std::vector<PhysicsObjects> PhysicsObjs;
 	//std::vector<Renderer> Renderers;
 
