@@ -27,7 +27,7 @@ int main(int argc, char* args[])
 	//delete obj;
 
 	
-
+	GameObject obj(&engine, 4);
 
 ///	std::vector<Component*> comps = obj.GetComponents<Component>();
 

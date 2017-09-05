@@ -50,8 +50,15 @@ public:
 		//Loop through each component until we find one that is of the type we are looking for
 		for (Component* const c : components)
 		{
-			if (dynamic_cast<T*>(c) != 0)
-				return static_cast<T*>(c);
+			try
+			{
+				return dynamic_cast<T*>(c);
+			}
+			catch (std::bad_cast)
+			{
+				//Ignore if not what were looking for
+			}
+			
 		}
 
 		return NULL;
@@ -66,8 +73,15 @@ public:
 		//Loop through each component adding any that match the type we are looking for to a vector
 		for (Component* const c : components)
 		{
-			if (dynamic_cast<T*>(c) != 0)
-				objs.push_back(static_cast<T*>(c));	
+			try
+			{
+				T* tmp = dynamic_cast<T*>(c);
+				objs.push_back(tmp);
+			}
+			catch (std::bad_cast)
+			{
+				//Ignore if not what were looking for
+			}
 		}
 
 		return objs;

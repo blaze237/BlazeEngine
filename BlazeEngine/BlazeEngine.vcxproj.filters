@@ -43,7 +43,7 @@
       <Filter>Source Files\BlazeEngine</Filter>
     </ClCompile>
     <ClCompile Include="RenderComponent.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\BlazeEngine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
